@@ -3,16 +3,20 @@ class Dessert:
         self._name = name.lower()
         self._calories = calories
 
+    @property
     def name(self):
         return self._name
 
+    @name.setter
+    def name(self, name: str):
+        self._name = name.lower()
+
+    @property
     def calories(self):
         return self._calories
 
-    def set_name(self, name: str):
-        self._name = name.lower()
-
-    def set_calories(self, calories: int):
+    @calories.setter
+    def calories(self, calories: int):
         self._calories = calories
 
     def is_healthy(self):

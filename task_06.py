@@ -58,7 +58,7 @@ class NoSuchStrategyError(Exception):
     pass
 
 
-def rps_game_winner(choices, figure_set: BaseLogic = FigureSet):
+def rps_game_winner(choices, figure_set: BaseLogic = FigureSet) -> str:
     if len(choices) != 2:
         raise WrongNumberOfPlayersError
 
@@ -71,4 +71,4 @@ def rps_game_winner(choices, figure_set: BaseLogic = FigureSet):
         raise NoSuchStrategyError
 
     winner_id = 0 if figure_set[choices[0][1].lower()] >= figure_set[choices[1][1].lower()] else 1
-    print(f"{choices[winner_id][0]} {choices[winner_id][1]}")
+    return f"{choices[winner_id][0]} {choices[winner_id][1]}"
